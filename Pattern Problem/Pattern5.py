@@ -7,17 +7,17 @@
 '''
 # First Method
 
-s=''
-j=1
-n=5
-for i in range(1,n+1):
-    if i%2!=0:
-        s+=str(j)
-        j+=1
-    else:
-        s+='@'
-for i in range(1,n+1): 
-    print(s[i-1:])
+# s=''
+# j=1
+# n=5
+# for i in range(1,n+1):
+#     if i%2!=0:
+#         s+=str(j)
+#         j+=1
+#     else:
+#         s+='@'
+# for i in range(1,n+1): 
+#     print(s[i-1:])
    
 
 
@@ -63,3 +63,11 @@ End
 #             print(m,end='')
 #             m+=1
 #     print()
+
+
+
+#Third method
+
+s='1@2@3'
+for i in range(5):
+    print(s[i:])
