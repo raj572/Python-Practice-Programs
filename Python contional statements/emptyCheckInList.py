@@ -1,5 +1,8 @@
-l=[]
-if len(l)==0:
-    print('This is empty list.')
+# Define a list
+my_list = []
+
+# Check if the list is empty
+if not my_list:
+    print("The list is empty.")
 else:
-    print(' This list is not empty')
+    print("The list is not empty.")

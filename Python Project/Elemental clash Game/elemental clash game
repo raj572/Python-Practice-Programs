@@ -1,0 +1,85 @@
+import random
+
+print('''\t\t----------------------------------------------------------
+        \t\t------------WELCOME TO ELEMENTAL CLASH GAME------------------
+          ------------------------------------------------------------------''')
+user_score=0
+computer_score=0
+UserTotalScore=0
+ComputerTotalScore=0
+
+q='exit'
+
+
+
+while True:
+    elemental_actions=['Fire','Water','Earth']
+    computer_action=random.choice(elemental_actions)
+    user_action=input('Enter your choice (Fire,Water or Earth) : ')
+    print('User Choice --> ',user_action)
+    print('Computer Choice --> ',computer_action)
+    if user_action==computer_action:
+        print("It's a tie!")
+    elif user_action=='Fire' and computer_action=='Earth':
+        print('Congrats! You Won!')
+        print('You got 5 points')
+        print(f'Your current score is {user_score}')
+        print(f'Computer current score is {computer_score}')
+        user_score+=5
+        computer_score-=1
+    elif user_action=='Earth' and computer_action=='Fire':
+        print('Oops! You lose :( ')
+        user_score-=1
+        computer_score+=5
+        print('Point 1 is deducted as you loose')
+        print('Computer got 5 points')
+        print(f'Your current score is {user_score}')
+        print(f'Computer current score is {computer_score}')
+    elif user_action=='Earth' and computer_action=='Water':
+        print('Congrats! You Won!')
+        print('You got 5 points')
+        print('Point 1 has deducted from computer')
+        user_score+=5
+        computer_score-=1
+        print(f'Your current score is {user_score}')
+        print(f'Computer current score is {computer_score}')
+    elif user_action=='Water' and computer_action=='Earth':
+        print('Oops! You lose :( ')
+        user_score-=1
+        computer_score+=5
+        print('Point 1 is deducted as you loose')
+        print(f'Your current score is {user_score}')
+        print(f'Computer current score is {computer_score}')
+    elif user_action=='Water' and computer_action=='Fire':
+        print('Congrats! You Won!')
+        print('You got 5 points')
+        user_score+=5
+        computer_score-=1
+        print(f'Your current score is {user_score}')
+        print(f'Computer current score is {computer_score}')
+    elif user_action=='Fire' and computer_action=='Water':
+        print('Oops! You lose :( ')
+        user_score-=1
+        computer_score+=5
+        print('Point 1 is deducted as you loose')
+        print(f'Your current score is {user_score}')
+        print(f'Computer current score is {computer_score}')
+    elif user_action not in elemental_actions:
+        if user_score>computer_score:
+            print('Congrats!! You won this game :) ')
+            print(f'Your total score is {user_score}')
+            print(f'Computer score is {computer_score}')
+        elif user_score<computer_score:
+            print('Oops! You loose!!Better luck next time :(')
+            print(f'Your total score is {user_score}')
+            print(f'Computer score is {computer_score}')
+        elif user_score==computer_score:
+            print("It's tie.")
+            print(f'Your total score is {user_score}')
+            print(f'Computer score is also {computer_score}')
+
+        break
+       
+    else:
+        print('Please enter valid element name!')
+

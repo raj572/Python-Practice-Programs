@@ -1,0 +1,3 @@
+
+else:
+    print('Please enter from given elements! Other elements are not allowed in this game.')
