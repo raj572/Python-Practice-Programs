@@ -13,55 +13,25 @@ ABCD   DCBA
 ABCDE EDCBA
 ABCDEFEDCBA
 '''
-# n=11
-# k=n//2
-# for i in range(n):
-#     for j in range(k):
-#         print(chr(65+j),end='')
-#     for j in range(k,-1,-1):
-#         print(chr(65+j),end='')
-
-#     print()
-
-'''
-int main() {
-  int i,j,k=0;
-  for(i=1;i<=9;i++){
-    i<=5 ? k++ : k--;
-    for(j=1;j<=9;j++){
-      if (j<=6-k || j>=4+k)
-        printf("*");
-      else
-      printf(" ");
-      
-    }
-    printf("\n");
-  }
-      
-      
-
-  return 0;
-}
-'''
-n=9
-k=0
-for i in range(1,n+1):
-    if i<=5:
-        k+=1
-    else:
-        k-=1
-    for j in range(1,n+1):
-        if j<=6-k or j>=4+k:
-            print(chr(64+j),end='')
-        else:
-            print(' ',end='')
+n=int(input('Enter any number : '))
+for i in range(n):
+    for j in range(n-i):
+        print(chr(65+j), end = "")
+    print(" "*i, end = "")
+    print(" "*(i-1), end = "")
+    for k in range(n-i, 0, -1):
+        if k ==n:
+            continue
+        print(chr(65+k-1), end ="")
     print()
 
-
-
-
-
-
-
-
-
+for m in range(2,n+1):
+    for j in range(m):
+        print(chr(65+j),end='')
+    print(" "*(n-m), end = "")
+    print(" "*((n-1)-m), end = "")
+    for d in range(m):
+        if d == 0 and m == n:
+            continue
+        print(chr(65+m -d-1), end = "")
+    print()
